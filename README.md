@@ -1,4 +1,10 @@
 # Algorithms
-Naive implementation of many fundamental algorithms and datastructures in Go.
+'Textbook' implementation of many fundamental algorithms and datastructures in Go.
 
-These are for educational purposes only, for most of these there are way better implementations available.
+These implementations are for educational purposes only, most of these algorithms have better implementations elsewhere.
+
+### TODO
+- Improve documentation to make this a more usefull educational resource.
+- Further implement linked list.
+- Add more algorithms and datastructures (eg. Tries).
+- Improve hash table implementation

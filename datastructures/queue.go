@@ -34,7 +34,7 @@ func (queue Queue) Enqueue(value interface{}) {
 }
 
 // Dequeue value from queue
-func (queue Queue) Dequeue() (interface{}, bool) {
+func (queue Queue) Dequeue() (value interface{}, ok bool) {
 	if queue.Empty() {
 		return nil, false
 	}

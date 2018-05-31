@@ -24,7 +24,7 @@ func (stack Stack) Push(value interface{}) {
 }
 
 // Pop value from stack
-func (stack Stack) Pop() (interface{}, bool) {
+func (stack Stack) Pop() (value interface{}, ok bool) {
 	if stack.Empty() {
 		return nil, false
 	}

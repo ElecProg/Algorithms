@@ -1,7 +1,7 @@
 package stringsorting
 
-// CountingSort sorts byte arrays by character on index i in ~ 11n
-// strings without a value a index i are considered to be first in order.
+// CountingSort sorts string by character on index i in ~ 11n
+// Strings without a value at index idx are considered to be first in order.
 func CountingSort(array []string, idx int) {
 	aux := make([]string, len(array))
 
