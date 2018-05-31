@@ -33,8 +33,20 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("Counting sort")
-	barr := [][]byte{[]byte{'c'}, []byte{'b'}, []byte{'b'}}
-	stringsorting.CountingSort(barr, 0)
-	fmt.Println(barr)
+	strngs := []string{"c", "b", "b"}
+	stringsorting.CountingSort(strngs, 0)
+	fmt.Println(strngs)
+	fmt.Println()
+
+	fmt.Println("LSD sort")
+	strngs = []string{"Bob", "Bart", "Bar", "Charlie"}
+	stringsorting.LSDSort(strngs, 4)
+	fmt.Println(strngs)
+	fmt.Println()
+
+	fmt.Println("MSD sort")
+	strngs = []string{"Bob", "Bart", "Bar", "Charlie", "Charlia"}
+	stringsorting.MSDSort(strngs)
+	fmt.Println(strngs)
 	fmt.Println()
 }
