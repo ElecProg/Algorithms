@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/ElecProg/Algorithms/sorting"
+	"github.com/ElecProg/Algorithms/stringproblems"
 	"github.com/ElecProg/Algorithms/stringsorting"
 )
 
@@ -61,4 +63,38 @@ func main() {
 	stringsorting.ThreeWayQuickSort(strngs)
 	fmt.Println(strngs)
 	fmt.Println()
+
+	fmt.Println("KMP")
+	text := "ABHEGJZGIUZUGFUZGUGEZVDYVDYZVDYUIHHFIUH"
+	pattern := "VDYZVD"
+	idx := stringproblems.KnuthMorrisPratt(text, pattern)
+	fmt.Println(text)
+	fmt.Print(strings.Repeat(" ", idx))
+	fmt.Println(pattern)
+	fmt.Println()
+
+	fmt.Println("BM")
+	text = "ABHEGJZGIUZUGFUZGUGEZVDYVDYZVDYUIHHFIUH"
+	pattern = "JZGIU"
+	idx = stringproblems.BoyerMoore(text, pattern)
+	fmt.Println(text)
+	fmt.Print(strings.Repeat(" ", idx))
+	fmt.Println(pattern)
+	fmt.Println()
+
+	fmt.Println("RK")
+	text = "ABHEGJZGIUZUGFUZGUGEZVDYVDYZVDYUIHHFIUH"
+	pattern = "GIUZUG"
+	idx = stringproblems.RabinKarp(text, pattern)
+	fmt.Println(text)
+	fmt.Print(strings.Repeat(" ", idx))
+	fmt.Println(pattern)
+	fmt.Println()
+
+	fmt.Println("LCS")
+	textA := "cataatcatcagcatcgctaagtcaacctcagaaccccgccccatgtttgtcccgtttcgtagggggcggttcaaaagcgcccgtgatcacctcgtttat"
+	textB := "ctacctggtcacgtcagggtattgatgctttctgcgcgcggatataccgcagcctagcgaaggcgatatgtccaatctataataagccttg"
+	fmt.Println("Sequence A:", textA)
+	fmt.Println("Sequence B:", textB)
+	fmt.Println("LCS lenght:", stringproblems.LongestCommonSubsequence(textA, textB))
 }
