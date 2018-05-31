@@ -13,12 +13,12 @@ type linkedListNode struct {
 }
 
 // Empty see if the linked list is empty
-func (list LinkedList) Empty() bool {
+func (list *LinkedList) Empty() bool {
 	return list.length == 0
 }
 
 // Infront adds an element to the beginning of the list
-func (list LinkedList) Infront(value interface{}) {
+func (list *LinkedList) Infront(value interface{}) {
 	node := &linkedListNode{
 		next:  list.first,
 		value: value,
@@ -33,7 +33,7 @@ func (list LinkedList) Infront(value interface{}) {
 }
 
 // Append an element to the end of the list
-func (list LinkedList) Append(value interface{}) {
+func (list *LinkedList) Append(value interface{}) {
 	node := &linkedListNode{
 		next:  nil,
 		value: value,
@@ -48,7 +48,7 @@ func (list LinkedList) Append(value interface{}) {
 }
 
 // Contains sees if a value is contained within the list
-func (list LinkedList) Contains(value interface{}) bool {
+func (list *LinkedList) Contains(value interface{}) bool {
 	current := list.first
 
 	for current != nil {

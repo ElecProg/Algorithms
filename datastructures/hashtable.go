@@ -21,12 +21,12 @@ type hashtableNode struct {
 }
 
 // Empty check if hastable is empty
-func (table Hashtable) Empty() bool {
+func (table *Hashtable) Empty() bool {
 	return table.elements == 0
 }
 
 // Get tries to find a key in the hash table
-func (table Hashtable) Get(key Hashable) (value interface{}, ok bool) {
+func (table *Hashtable) Get(key Hashable) (value interface{}, ok bool) {
 	if key == nil || table.elements == 0 {
 		return nil, false
 	}
@@ -48,7 +48,7 @@ func (table Hashtable) Get(key Hashable) (value interface{}, ok bool) {
 }
 
 // Put adds key and value to the hash table
-func (table Hashtable) Put(key Hashable, value interface{}) (ok bool) {
+func (table *Hashtable) Put(key Hashable, value interface{}) (ok bool) {
 	if key == nil {
 		return false
 	}
@@ -62,7 +62,7 @@ func (table Hashtable) Put(key Hashable, value interface{}) (ok bool) {
 	return true
 }
 
-func (table Hashtable) add(node *hashtableNode) {
+func (table *Hashtable) add(node *hashtableNode) {
 	if node == nil || node.key == nil {
 		// Can't add nil node nor node with nil key (thombstone)
 		return
@@ -90,7 +90,7 @@ func (table Hashtable) add(node *hashtableNode) {
 	}
 }
 
-func (table Hashtable) grow() {
+func (table *Hashtable) grow() {
 	oldtable := table.table
 	table.table = make([]*hashtableNode, len(oldtable)*2)
 	table.elements = 0
@@ -101,7 +101,7 @@ func (table Hashtable) grow() {
 }
 
 // Remove key from the hash table
-func (table Hashtable) Remove(key Hashable) (ok bool) {
+func (table *Hashtable) Remove(key Hashable) (ok bool) {
 	if key == nil || table.elements == 0 {
 		return false
 	}
@@ -130,7 +130,7 @@ func (table Hashtable) Remove(key Hashable) (ok bool) {
 	return false
 }
 
-func (table Hashtable) shrink() {
+func (table *Hashtable) shrink() {
 	oldtable := table.table
 	table.table = make([]*hashtableNode, len(oldtable)/2)
 	table.elements = 0

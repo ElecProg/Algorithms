@@ -11,12 +11,12 @@ type stackNode struct {
 }
 
 // Empty see if stack is empty
-func (stack Stack) Empty() bool {
+func (stack *Stack) Empty() bool {
 	return stack.top == nil
 }
 
 // Push value on stack
-func (stack Stack) Push(value interface{}) {
+func (stack *Stack) Push(value interface{}) {
 	stack.top = &stackNode{
 		next:  stack.top,
 		value: value,
@@ -24,7 +24,7 @@ func (stack Stack) Push(value interface{}) {
 }
 
 // Pop value from stack
-func (stack Stack) Pop() (value interface{}, ok bool) {
+func (stack *Stack) Pop() (value interface{}, ok bool) {
 	if stack.Empty() {
 		return nil, false
 	}

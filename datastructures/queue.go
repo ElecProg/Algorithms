@@ -12,12 +12,12 @@ type queueNode struct {
 }
 
 // Empty see if queue is empty
-func (queue Queue) Empty() bool {
+func (queue *Queue) Empty() bool {
 	return queue.out == nil
 }
 
 // Enqueue value on queue
-func (queue Queue) Enqueue(value interface{}) {
+func (queue *Queue) Enqueue(value interface{}) {
 	node := &queueNode{
 		next:  nil,
 		value: value,
@@ -34,7 +34,7 @@ func (queue Queue) Enqueue(value interface{}) {
 }
 
 // Dequeue value from queue
-func (queue Queue) Dequeue() (value interface{}, ok bool) {
+func (queue *Queue) Dequeue() (value interface{}, ok bool) {
 	if queue.Empty() {
 		return nil, false
 	}

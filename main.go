@@ -32,6 +32,12 @@ func main() {
 	fmt.Println(arr)
 	fmt.Println()
 
+	fmt.Println("Heap sort")
+	arr = []int{8, 3, 2, 4, 6}
+	sorting.HeapSort(arr)
+	fmt.Println(arr)
+	fmt.Println()
+
 	fmt.Println("Counting sort")
 	strngs := []string{"c", "b", "b"}
 	stringsorting.CountingSort(strngs, 0)
