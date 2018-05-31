@@ -8,15 +8,6 @@ func CountingSort(array []string, idx int) {
 	countingsort(array, idx, aux, 0, len(array)-1)
 }
 
-// Returns the value of the character at index idx, if idx is too large, returns -1
-func getchr(str string, idx int) int {
-	if idx >= len(str) {
-		return -1
-	}
-
-	return int(str[idx])
-}
-
 // Internal counting sort returns the counting array
 func countingsort(array []string, idx int, aux []string, lo int, hi int) []int {
 	count := make([]int, 256+2)

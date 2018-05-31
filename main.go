@@ -49,4 +49,10 @@ func main() {
 	stringsorting.MSDSort(strngs)
 	fmt.Println(strngs)
 	fmt.Println()
+
+	fmt.Println("3-way string quick sort")
+	strngs = []string{"Bob", "Bart", "Bar", "Charlie", "Charlia"}
+	stringsorting.ThreeWayQuickSort(strngs)
+	fmt.Println(strngs)
+	fmt.Println()
 }
