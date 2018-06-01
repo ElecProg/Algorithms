@@ -6,6 +6,26 @@ type PriorityQueue struct {
 	size int
 }
 
+// BuildPriorityQueue creates a priority queue from an array
+func BuildPriorityQueue(array []int) PriorityQueue {
+	queue := PriorityQueue{
+		heap: make([]int, len(array)*2),
+		size: len(array),
+	}
+
+	// Copy array to heap
+	for i, val := range array {
+		queue.heap[i+1] = val
+	}
+
+	// Construct heap
+	for i := queue.size; i > 0; i-- {
+		queue.swim(i)
+	}
+
+	return queue
+}
+
 // Empty checks if the priority queue is empty
 func (queue *PriorityQueue) Empty() bool {
 	return queue.size == 0
