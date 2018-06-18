@@ -7,8 +7,8 @@ func LongestCommonSubsequence(seqA, seqB string) int {
 		L[i] = make([]int, len(seqB))
 	}
 
-	for i := 1; i < len(seqA)+1; i++ {
-		for j := 1; j < len(seqB)+1; j++ {
+	for i := 1; i < len(seqA); i++ {
+		for j := 1; j < len(seqB); j++ {
 			if seqA[i-1] == seqB[j-1] {
 				L[i][j] = get(L, i-1, j-1) + 1
 

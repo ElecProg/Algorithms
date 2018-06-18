@@ -19,7 +19,7 @@ func BuildPriorityQueue(array []int) PriorityQueue {
 	}
 
 	// Construct heap
-	for i := queue.size; i > 0; i-- {
+	for i := queue.size / 2; i > 0; i-- {
 		queue.swim(i)
 	}
 
